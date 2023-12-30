@@ -12,16 +12,17 @@ Our goal is to translate these vocalizations into clear data, enhancing our unde
 
 # Data Understanding
 
-1. **Building the Dataset**
-_1.1 Participants:_
-Mio, a 3.5-month-old Scottish Fold kitten, and a group of humans including the study author and his daughter Kate.
+1. **Building the Dataset**  
+_1.1 Participants:_  
+Mio, a 3.5-month-old Scottish Fold kitten.  
+A group of humans including the study author and his daughter Kate.  
 _1.2 Experimental Contexts:_  
 - `F` aka food: Kitten recorded before mealtime.
 - `A` aka attention: Kitten recorded meowing in an isolated room.
 - `T` aka thrill: Kitten recorded while being petted.
 - `KAT` aka human: Human participant randomly mimicking meows.
 
-2. **Data Acquisition Process**
+2. **Data Acquisition Process**  
 The experiment spanned 15 days.  
 Recordings were made using a Samsung Note20 equipped with the "Samsung Voice Recorder" app.  
 Files were converted to .wav format and broken down into samples under 3 seconds.
@@ -61,7 +62,7 @@ Audio files share common properties:
 - 16-bit depth  
 The audio data is stored in NumPy arrays.  
 
-We explored files with diverse audio characteristics providing various measures such as:  
+We explored files with diverse audio characteristics which offered various measures such as:  
 - Waveform
 - Spectral centroid
 - Spectral bandwidth
@@ -85,7 +86,6 @@ We explored files with diverse audio characteristics providing various measures 
 <div style="text-align: center;" style="border: 2px solid black;">
     <img src="images/chromagram_human.png" alt="chromagram_human" width="500" height="400">
 </div>
-waveform_food
 
 Each condition can be described as below: 
 - `food` showed fluctuating intensity and low-frequency dominance
@@ -93,7 +93,34 @@ Each condition can be described as below:
 - `thrill` exhibited complex, variable sounds across a wide frequency range
 - `human` demonstrated stable, monotone audio with a focus on lower frequencies
 
+# Dataset Processing  
+We processed audio files converting them into spectrograms.  
+These features were extracted:
+- Chroma Frequencies
+- Spectral Centroid
+- Spectral Bandwidth
+- Spectral Rolloff
+- Zero Crossing Rate
+- Mel-frequency cepstral coefficients (MFCC), limited to 13 to prevent overfitting.  
 # Modeling
-# Testing Best Model
-# Deployment
+We created and trained three models: Dummy, XGBoost, and Neural Network Sequential (NNS).  
+The XGBoost and NNS were fine-tuned using GridSearchCV and Keras Tuner, respectively.     
+NNS model exhibited the highest accuracy on both the training and test datasets, with scores of 95.9% and 93.2%, respectively.  
+
+The Confusion Matrix reveals a certain level of misclassification between the _food_ and _attention_.
+<div style="text-align: center;" style="border: 2px solid black;">
+    <img src="images/confusion_matrix.png" alt="confusion_matrix" width="500" height="400">
+</div>
+
+# Predictions
+We used the model to predict the category of the audio samples.
+A sample of a prediction:  
+File: 202312090945_F_predict.WAV  
+Probabilities for each condition:  
+attention: 3.65%  
+food: 96.35%  
+human: 0.00%  
+thrill: 0.00%  
+Predicted condition: ['food']
+
 # Conclusion
