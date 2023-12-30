@@ -71,19 +71,19 @@ We explored files with diverse audio characteristics providing various measures 
 - Spectrogram
 - Chromagram. 
 <div style="text-align: center;" style="border: 2px solid black;">
-    <img src="images/waveform_food.jpeg" alt="waveform_food" width="600" height="300">
+    <img src="images/waveform_food.png" alt="waveform_food" width="600" height="300">
 </div>
 
 <div style="text-align: center;" style="border: 2px solid black;">
-    <img src="images/centroid_thrill.jpeg" alt="centroid_thrill" width="600" height="300">
+    <img src="images/centroid_thrill.png" alt="centroid_thrill" width="600" height="300">
 </div>
 
 <div style="text-align: center;" style="border: 2px solid black;">
-    <img src="images/spectogram_attention.jpeg" alt="spectogram_attention" width="800" height="300">
+    <img src="images/spectogram_attention.png" alt="spectogram_attention" width="800" height="300">
 </div>
 
 <div style="text-align: center;" style="border: 2px solid black;">
-    <img src="images/chromagraph_human.jpeg" alt="chromagraph_human" width="800" height="300">
+    <img src="images/chromagraph_human.png" alt="chromagraph_human" width="800" height="300">
 </div>
 waveform_food
 
