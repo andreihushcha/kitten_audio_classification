@@ -2,72 +2,94 @@
     <img src="images/main.png" alt="meow_kate_meow" width="600" height="400">
 </div>
 
+# Title
+**FatKat: Deciphering Kitten's Meows with Neural Network-Based Audio Classification**
+
+# Overview
+We aim to classify and understand kitten meows using advanced machine learning.  
+This project focuses on revealing the complex acoustic patterns in kitten sounds using neural network model.  
+Our goal is to translate these vocalizations into clear data, enhancing our understanding of human-feline communication through deep learning techniques.
 
 # Data Understanding
+
 1. **Building the Dataset**
-
 _1.1 Participants:_
-- A lively and amicable 3.5-month-old male Scottish Fold kitten named Mio served as the primary subject.
-- A group of human participants, including myself as a study author and my daughter Kate as a human meow vocalizer.
-
+Mio, a 3.5-month-old Scottish Fold kitten, and a group of humans including the study author and his daughter Kate.
 _1.2 Experimental Contexts:_  
-Accompanied by the study author, the kitten was exposed to four distinct contexts aimed at eliciting varied meows:
-
-- Waiting for Food (Condition `F`):
-The author initiated routine morning recordings preceding mealtime, with food delivered after the recordings done.
-- Seeking Attention in Isolation (Condition `A`):
-The kitten was placed in an isolated room with ample provisions and signaled its need for attention by meowing at the closed door.
-- Contentment (Condition `C`):
-The kitten is purring while petted and caressed by author in a home environment for 3-5 minutes.
-- Thrill (Condition `T`):
-Meowing during a state of contentment.
-
-Typically, vocalizations in a single exposure comprised multiple repeated meows.
+`F` aka food: Kitten recorded before mealtime.
+`A` aka attention: Kitten recorded meowing in an isolated room.
+`T` aka thrill: Kitten recorded while being petted.
+`KAT` aka human: Human participant randomly mimicking meows.
 
 2. **Data Acquisition Process**
-
-The experiment spanned 12-15 days, conducted in the same room, with daily data collection using a Samsung Note20 phone equipped with the "Samsung Voice Recorder" app.  
-Each recorded audio file, averaging 1.5-2.5 minutes, was converted to .wav format via www.cloudconvert.com  
-Further processing included breaking down each .wav file into individual samples: meow (less than 3 seconds) and purrs (less than 5 seconds).
+The experiment spanned 15 days.  
+Recordings were made using a Samsung Note20 equipped with the "Samsung Voice Recorder" app.  
+Files were converted to .wav format and broken down into samples under 3 seconds.
 
 3. **Dataset Composition:**  
-
 The dataset consists of:
-- 96 samples obtained under Condition `F`
-- 90 samples obtained under Condition `A`
-- 66 samples obtained under Condition `C`
-- 19 samples obtained under Condition `T`
+- 95 samples in `F`
+- 95 samples in `A`
+- 80 samples in `T`
+- 98 samples in `KAT`
+Total: 368 audio files
 
-Additionally, we included 99 meows from my daughter to aid the program in recognizing human meow.  
-These samples are obtained under condition `KAT`  
-This diverse set of vocalizations allows us predict artificial meows if users want to simulate meowing themselves.  
+Each sample is named in a format indicating the date, time, condition, and sample number.
 
-**Total: 370 audio files**
+3. **Prediction audio samples:**  
 
-Individual sample description:  
-202312071816_T_1.wav,  where
-- 2023 = year recorded
-- 12 = month recorded
-- 07 = day recorded
-- 18  = hour (24 hours) recorded
-- 16 = minute  recorded
-- T = condition recorded
-- 1 = number of the sample
-- wav = audio format of the sample
+4 random samples from each condition and 1 extra by the author were chosen for prediction testing.
+
+_`More details about building dataset can be found in the Notebook`_
+
 # Business Problem
 Many people decide to get a kitten, but they don't always fully understand what these cute creatures need.  
 Games, food or something else?  
 And how to find out if they enjoy playing?
 
-Our project consists of two key parts:
+This project consists of two key parts:
 - **Model for predicting meowing categories:**  
 We aim to create a model that accurately determines which category a meow belongs to with the best accuracy score.  
-Data processing speed is also an important aspect, influencing the second part of our work.
-
 - **Mobile app for owner training:**  
 Based on the model's results, we are developing a mobile app.  
-It provides new owners with the opportunity to learn how to understand their furry friends from the very first days in their new home.
-# EDA
+
+# Exploratory Data Analysis
+Audio files share common properties:  
+- .wav format
+- mono channel
+- sample rate of 44100 Hz
+- 16-bit depth  
+The audio data is stored in NumPy arrays.  
+
+We explored files with diverse audio characteristics providing various measures such as:  
+- Waveform
+- Spectral centroid
+- Spectral bandwidth
+- Spectral rolloff
+- Zero-crossing value
+- Mfcc
+- Spectrogram
+- Chromagram. 
+
+<p align="center">
+  <img src="images/waveform_food.png" alt="waveform_food" width="300" height="200"/>
+</p>
+<p align="center">
+  <img src="images/centroid_thrill.png" alt="centroid_thrill" width="300" height="200"/>
+</p>
+<p align="center">
+  <img src="images/spectogram_attention.png" alt="spectogram_attention" width="300" height="400"/>
+</p>
+<p align="center">
+  <img src="images/chromagraph_human.png" alt="Echromagraph_human" width="300" height="200"/>
+</p>
+
+Each condition can be described as below: 
+- `food` showed fluctuating intensity and low-frequency dominance
+- `attention` was marked by consistent high-frequency sounds
+- `thrill` exhibited complex, variable sounds across a wide frequency range
+- `human` demonstrated stable, monotone audio with a focus on lower frequencies
+
 # Modeling
 # Testing Best Model
 # Deployment
