@@ -16,10 +16,10 @@ Our goal is to translate these vocalizations into clear data, enhancing our unde
 _1.1 Participants:_
 Mio, a 3.5-month-old Scottish Fold kitten, and a group of humans including the study author and his daughter Kate.
 _1.2 Experimental Contexts:_  
-`F` aka food: Kitten recorded before mealtime.
-`A` aka attention: Kitten recorded meowing in an isolated room.
-`T` aka thrill: Kitten recorded while being petted.
-`KAT` aka human: Human participant randomly mimicking meows.
+- `F` aka food: Kitten recorded before mealtime.
+- `A` aka attention: Kitten recorded meowing in an isolated room.
+- `T` aka thrill: Kitten recorded while being petted.
+- `KAT` aka human: Human participant randomly mimicking meows.
 
 2. **Data Acquisition Process**
 The experiment spanned 15 days.  
@@ -70,19 +70,22 @@ We explored files with diverse audio characteristics providing various measures 
 - Mfcc
 - Spectrogram
 - Chromagram. 
+<div style="text-align: center;" style="border: 2px solid black;">
+    <img src="images/waveform_food.jpeg" alt="waveform_food" width="600" height="300">
+</div>
 
-<p align="center">
-  <img src="images/waveform_food.png" alt="waveform_food" width="300" height="200"/>
-</p>
-<p align="center">
-  <img src="images/centroid_thrill.png" alt="centroid_thrill" width="300" height="200"/>
-</p>
-<p align="center">
-  <img src="images/spectogram_attention.png" alt="spectogram_attention" width="300" height="400"/>
-</p>
-<p align="center">
-  <img src="images/chromagraph_human.png" alt="Echromagraph_human" width="300" height="200"/>
-</p>
+<div style="text-align: center;" style="border: 2px solid black;">
+    <img src="images/centroid_thrill.jpeg" alt="centroid_thrill" width="600" height="300">
+</div>
+
+<div style="text-align: center;" style="border: 2px solid black;">
+    <img src="images/spectogram_attention.jpeg" alt="spectogram_attention" width="800" height="300">
+</div>
+
+<div style="text-align: center;" style="border: 2px solid black;">
+    <img src="images/chromagraph_human.jpeg" alt="chromagraph_human" width="800" height="300">
+</div>
+waveform_food
 
 Each condition can be described as below: 
 - `food` showed fluctuating intensity and low-frequency dominance
