@@ -79,11 +79,11 @@ We explored files with diverse audio characteristics providing various measures 
 </div>
 
 <div style="text-align: center;" style="border: 2px solid black;">
-    <img src="images/spectogram_attention.png" alt="spectogram_attention" width="500" height="500">
+    <img src="images/spectogram_attention.png" alt="spectogram_attention" width="500" height="400">
 </div>
 
 <div style="text-align: center;" style="border: 2px solid black;">
-    <img src="images/chromagraph_human.png" alt="chromagraph_human" width="500" height="500">
+    <img src="images/chromagram_human.png" alt="chromagram_human" width="500" height="400">
 </div>
 waveform_food
 
