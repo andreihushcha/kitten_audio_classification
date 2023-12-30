@@ -2,15 +2,16 @@
     <img src="images/main.png" alt="meow_kate_meow" width="600" height="400">
 </div>
 
-# Title
-**FatKat: Deciphering Kitten's Meows with Neural Network-Based Audio Classification**
+# FatKat: Deciphering Kitten's Meows with Neural Network-Based Audio Classification
 
-# Overview
+Author: [Andrei Hushcha](https://www.linkedin.com/in/andrew-hushcha/)
+
+## Overview
 We aim to classify and understand kitten meows using advanced machine learning.  
 This project focuses on revealing the complex acoustic patterns in kitten sounds using neural network model.  
-Our goal is to translate these vocalizations into clear data, enhancing our understanding of human-feline communication through deep learning techniques.
+Our goal is to translate these vocalizations into clear data, enhancing our understanding of feline-human communication through deep learning techniques.
 
-# Data Understanding
+## Data Understanding
 
 1. **Building the Dataset**  
 _1.1 Participants:_  
@@ -32,18 +33,18 @@ The dataset consists of:
 - 95 samples in `F`
 - 95 samples in `A`
 - 80 samples in `T`
-- 98 samples in `KAT`
+- 98 samples in `KAT`  
 Total: 368 audio files
 
 Each sample is named in a format indicating the date, time, condition, and sample number.
 
 3. **Prediction audio samples:**  
 
-4 random samples from each condition and 1 extra by the author were chosen for prediction testing.
+4 random samples from each condition, not included in dataset, and 1 extra by the author were chosen for prediction testing.
 
 _`More details about building dataset can be found in the Notebook`_
 
-# Business Problem
+## Business Problem
 Many people decide to get a kitten, but they don't always fully understand what these cute creatures need.  
 Games, food or something else?  
 And how to find out if they enjoy playing?
@@ -54,7 +55,15 @@ We aim to create a model that accurately determines which category a meow belong
 - **Mobile app for owner training:**  
 Based on the model's results, we are developing a mobile app.  
 
-# Exploratory Data Analysis
+## Methods
+This project uses Dummy, XGBoost, Neural Network Sequential Models.  
+Findings are informed by a strong understanding of Librosa, Tensorflow, Keras, Scikit Learn.
+
+## Results
+Neural Network Sequential tuned with Keras Tuner exhibited the highest accuracy on both the training and test datasets, with scores of 95.9% and 93.2%, respectively.  
+In the final prediction phase, all files were predicted correctly, demonstrating the effectiveness of the model in classifying audio samples based on the features extracted.  
+
+## Exploratory Data Analysis
 Audio files share common properties:  
 - .wav format
 - mono channel
@@ -93,7 +102,7 @@ Each condition can be described as below:
 - `thrill` exhibited complex, variable sounds across a wide frequency range
 - `human` demonstrated stable, monotone audio with a focus on lower frequencies
 
-# Dataset Processing  
+## Dataset Processing  
 We processed audio files converting them into spectrograms.  
 These features were extracted:
 - Chroma Frequencies
@@ -102,18 +111,17 @@ These features were extracted:
 - Spectral Rolloff
 - Zero Crossing Rate
 - Mel-frequency cepstral coefficients (MFCC), limited to 13 to prevent overfitting.  
-# Modeling
+## Modeling
 We created and trained three models: Dummy, XGBoost, and Neural Network Sequential (NNS).  
 The XGBoost and NNS were fine-tuned using GridSearchCV and Keras Tuner, respectively.     
-NNS model exhibited the highest accuracy on both the training and test datasets, with scores of 95.9% and 93.2%, respectively.  
 
 The Confusion Matrix reveals a certain level of misclassification between the _food_ and _attention_.
 <div style="text-align: center;" style="border: 2px solid black;">
     <img src="images/confusion_matrix.png" alt="confusion_matrix" width="500" height="400">
 </div>
 
-# Predictions
-We used the model to predict the category of the audio samples.
+## Predictions
+We used saved Neural Network Sequential model to predict the categories of random audio samples.
 A sample of a prediction:  
 File: 202312090945_F_predict.WAV  
 Probabilities for each condition:  
@@ -123,4 +131,15 @@ human: 0.00%
 thrill: 0.00%  
 Predicted condition: ['food']
 
+## Data Limitations
+- Data is limited to a specific age, gender, and breed of the kitten
+- Constraints extend to the specific environment and the kitten's behavioral range
+
 # Conclusion
+Overall, the project successfully utilized various audio analysis techniques and machine learning models to distinguish between different audio conditions.  
+Tuned Neural Network Sequential model is considered the most effective for predictions.  
+The high accuracy in model predictions highlights the potential of machine learning in sophisticated audio analysis tasks.
+
+# Mobile App Development  
+In progress.
+
