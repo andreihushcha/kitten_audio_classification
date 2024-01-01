@@ -26,14 +26,14 @@ Based on the model's results, we are developing a mobile app.
 1. **Building the Dataset**  
 
 _1.1 Participants:_  
-- Mio, a 3.5-month-old Scottish Fold kitten  
+- Mio: A 3.5-month-old Scottish Fold male kitten  
 - A group of humans including the study author and his daughter Kate  
 
 _1.2 Experimental Contexts:_  
-- `F` aka food: kitten recorded before mealtime
-- `A` aka attention: kitten recorded meowing in an isolated room
-- `T` aka thrill: kitten recorded while being petted
-- `KAT` aka human: human participant randomly mimicking meows
+- `F` (Food): Kitten recorded before mealtime
+- `A` (Attention): Kitten recorded meowing in an isolated room
+- `T` (Thrill): Kitten recorded while being petted
+- `KAT` (Human): Human participant randomly mimicking meows
 
 2. **Data Acquisition Process**  
 
@@ -97,13 +97,13 @@ The files were explored with diverse audio characteristics which offered various
 </div>
 
 Each condition can be described as below: 
-- `food` showed fluctuating intensity and low-frequency dominance
-- `attention` was marked by consistent high-frequency sounds
-- `thrill` exhibited complex, variable sounds across a wide frequency range
-- `human` demonstrated stable, monotone audio with a focus on lower frequencies
+- `Food` showed fluctuating intensity and low-frequency dominance
+- `Attention` was marked by consistent high-frequency sounds
+- `Thrill` exhibited complex, variable sounds across a wide frequency range
+- `Human` demonstrated stable, monotone audio with a focus on lower frequencies
 
 ## Dataset Processing  
-The processed audio files converting them into spectrograms.  
+The processed audio files were converted into spectrograms.  
 The following features were extracted:
 - Chroma Frequencies
 - Spectral Centroid
@@ -115,14 +115,15 @@ The following features were extracted:
 Three models were created and trained: Dummy, XGBoost, and Neural Network Sequential.  
 The XGBoost and Neural Network Sequential were fine-tuned using GridSearchCV and Keras Tuner, respectively.     
 
-The Confusion Matrix reveals a certain level of misclassification between the _food_ and _attention_.
+The Confusion Matrix reveals a certain level of misclassification between the _Food_ and _Attention_.
 <div style="text-align: center;" style="border: 2px solid black;">
     <img src="images/confusion_matrix.png" alt="confusion_matrix" width="500" height="400">
 </div>
 
 ## Predictions
-We used saved Neural Network Sequential model to predict the categories of random audio samples.
-A sample of a delivered prediction:  
+We used saved Neural Network Sequential model to predict the categories of random audio samples.  
+
+A sample of a prediction:  
 File: 202312090945_F_predict.WAV  
 Probabilities for each condition:  
 attention: 3.65%  
@@ -146,7 +147,7 @@ The high accuracy in model predictions highlights the potential of machine learn
 - **Database Expansion:** we plan to enlarge our meow database, enhancing the accuracy and reliability of our predictions
 
 ## Appendix
-The complete analysis can be found in the <a href="notebook.ipynb">Jupyter Notebook</a> and in the <a href="presentation.pdf">presentation</a>.
+The complete analysis can be found in the <a href="notebook.ipynb">Jupyter Notebook</a> and in the <a href="presentation.pdf">Presentation</a>.
 
 For general questions, please contact Andrei Hushcha at <a href="mailto:andrew.hushcha@gmail.com">andrew.hushcha@gmail</a>.
 
@@ -156,4 +157,25 @@ When utilizing the database, proper attribution with a link to the author's [Git
 For commercial inquiries or usage, please contact the author directly.
 
 ## Repository Structure
+├── dataset
+<br>
+├── images
+<br>
+├── img_data
+<br>
+├── keras_tuner/hparam_tuning
+<br>
+├── model
+<br>
+├── predict
+<br>
+├── .gitignore
+<br>
+├── README.md
+<br>
+├── dataset.csv
+<br>
+├── notebook.ipynb
+<br>
+└── presentation.pdf
 
