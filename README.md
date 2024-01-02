@@ -157,15 +157,15 @@ When utilizing the database, proper attribution with a link to the author's [Git
 For commercial inquiries or usage, please contact the author directly.
 
 ## Repository Structure
-├── dataset                       <- Folder containing audio files
-├── images                        <- Folder containing images used                 
-├── img_data                      <- Folder containing images extracted from audio dataset
-├── keras_tuner/hparam_tuning     <- Folder containing hyperpameters tuning results
-├── model                         <- Folder containing the best model
-├── predict                       <- Folder containing files used for predictions
-├── .gitignore                    <- gitignore file
-├── README.md                     <- The top-level README for reviewers of the project
-├── dataset.csv                   <- File containing extracted features from audio dataset
-├── notebook.ipynb                <- Narrative documentation of analysis in jupyter notebook
-└── presentation.pdf              <- PDF version of project presentation
+├── dataset                       <- Folder containing audio files<br>
+├── images                        <- Folder containing images used<br>                 
+├── img_data                      <- Folder containing images extracted from audio dataset<br>
+├── keras_tuner/hparam_tuning     <- Folder containing hyperpameters tuning results<br>
+├── model                         <- Folder containing the best model<br>
+├── predict                       <- Folder containing files used for predictions<br>
+├── .gitignore                    <- gitignore file<br>
+├── README.md                     <- The top-level README for reviewers of the project<br>
+├── dataset.csv                   <- File containing extracted features from audio dataset<br>
+├── notebook.ipynb                <- Narrative documentation of analysis in jupyter notebook<br>
+└── presentation.pdf              <- PDF version of project presentation<br>
 
