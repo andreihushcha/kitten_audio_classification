@@ -157,8 +157,8 @@ When utilizing the database, proper attribution with a link to the author's [Git
 For commercial inquiries or usage, please contact the author directly.
 
 ## Repository Structure
-├── dataset                       <- Folder containing audio files<br>
-├── images                        <- Folder containing images used<br>                 
+├── dataset                         <- Folder containing audio files<br>
+├── images                          <- Folder containing images used<br>              
 ├── img_data                      <- Folder containing images extracted from audio dataset<br>
 ├── keras_tuner/hparam_tuning     <- Folder containing hyperpameters tuning results<br>
 ├── model                         <- Folder containing the best model<br>
