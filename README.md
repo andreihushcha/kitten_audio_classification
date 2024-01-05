@@ -56,11 +56,11 @@ Each sample is named in a format indicating the date, time, condition, and sampl
 4 random samples from each condition, not included in dataset, and 1 extra by the author were chosen for prediction testing.
 
 ## Methods
-This project uses Dummy, XGBoost, Neural Network Sequential Models.  
+This project uses Dummy, XGBoost, Sequential Neural Network.  
 Findings are informed by a strong understanding of Librosa, Tensorflow, Keras, Scikit Learn.
 
 ## Results
-Neural Network Sequential tuned with Keras Tuner exhibited the highest accuracy on both the training and test datasets, with scores of 95.9% and 93.2%, respectively.  
+Sequential Neural Network tuned with Keras Tuner exhibited the highest accuracy on both the training and test datasets, with scores of 95.9% and 93.2%, respectively.  
 In the final prediction phase, all files were predicted correctly, demonstrating the effectiveness of the model in classifying audio samples based on the features extracted.  
 
 ## Exploratory Data Analysis
@@ -112,8 +112,8 @@ The following features were extracted:
 - Zero Crossing Rate
 - MFCC, limited to 13 to prevent overfitting.  
 ## Modeling
-Three models were created and trained: Dummy, XGBoost, and Neural Network Sequential.  
-The XGBoost and Neural Network Sequential were fine-tuned using GridSearchCV and Keras Tuner, respectively.     
+Three models were created and trained: Dummy, XGBoost, and Sequential Neural Network.  
+The XGBoost and Sequential Neural Network were fine-tuned using GridSearchCV and Keras Tuner, respectively.     
 
 The Confusion Matrix reveals a certain level of misclassification between the _Food_ and _Attention_.
 <div style="text-align: center;" style="border: 2px solid black;">
@@ -121,7 +121,7 @@ The Confusion Matrix reveals a certain level of misclassification between the _F
 </div>
 
 ## Predictions
-We used saved Neural Network Sequential model to predict the categories of random audio samples.  
+We used saved Sequential Neural Network to predict the categories of random audio samples.  
 
 A sample of a prediction:  
 File: 202312090945_F_predict.WAV  
@@ -138,7 +138,7 @@ Predicted condition: ['food']
 
 # Conclusion
 Overall, the project successfully utilized various audio analysis techniques and machine learning models to distinguish between different audio conditions.  
-Tuned Neural Network Sequential model is considered the most effective for predictions.  
+Tuned Sequential Neural Network model is considered the most effective for predictions.  
 The high accuracy in model predictions highlights the potential of machine learning in sophisticated audio analysis tasks.
 
 ## Next Steps  
