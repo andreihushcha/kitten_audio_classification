@@ -27,7 +27,7 @@ Based on the model's results, we are developing a mobile app.
 
 _1.1 Participants:_  
 - Mio: A 3.5-month-old Scottish Fold male kitten  
-- A group of humans including the study author and his daughter Kate  
+- A group of humans including the study author and an 8-year-old girl Kate  
 
 _1.2 Experimental Contexts:_  
 - `F` (Food): Kitten recorded before mealtime
